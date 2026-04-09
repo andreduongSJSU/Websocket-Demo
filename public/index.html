@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WebSocket demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <h1>WebSocket demo</h1>
+        <p class="lede">
+          Open this page in two browser tabs to see messages broadcast in real time. Messages are stored in
+          <strong>MongoDB</strong> and the last 50 load when you connect. The server uses Node, <code>ws</code>, and the
+          official <code>mongodb</code> driver.
+        </p>
+        <div class="status-row">
+          <span id="status" class="status status--disconnected" aria-live="polite">Disconnected</span>
+          <span id="hint" class="hint"></span>
+        </div>
+      </header>
+
+      <section class="panel" aria-label="Chat">
+        <ul id="log" class="log" role="log" aria-relevant="additions"></ul>
+        <form id="form" class="form" autocomplete="off">
+          <label class="sr-only" for="message">Message</label>
+          <input id="message" type="text" maxlength="2000" placeholder="Type a message and press Enter…" disabled />
+          <button type="submit" id="send" disabled>Send</button>
+        </form>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
